@@ -18,7 +18,7 @@ import com.cognizant.microservices.pensionerdetailservice.repository.PensionerDe
 import com.cognizant.microservices.pensionerdetailservice.service.PensionarDetailServiceImpl;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class PensionerDetailsController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(PensionerDetailsController.class);
