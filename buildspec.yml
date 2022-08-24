@@ -14,14 +14,14 @@ phases:
       - echo Building java  
       - mvn clean package
       - echo Building the docker image
-      - docker build -t pensioner-detail-service  .
-      - docker tag pensioner-detail-service:latest 274201610284.dkr.ecr.us-west-2.amazonaws.com/pensioner-detail-service:latest
+      - docker build -t pensioner-detail-service-sk  .
+      - docker tag pensioner-detail-service-sk:latest 274201610284.dkr.ecr.us-west-2.amazonaws.com/pensioner-detail-service-sk:latest
   post_build:
     commands:
       - echo Build completed on `date`
-      - docker push 274201610284.dkr.ecr.us-west-2.amazonaws.com/pensioner-detail-service:latest
+      - docker push 274201610284.dkr.ecr.us-west-2.amazonaws.com/pensioner-detail-service-sk:latest
       - echo Writing definition files
-      - printf '[{"name":"pensioner-detail-service","imageUri":"%s"}]' 274201610284.dkr.ecr.us-west-2.amazonaws.com/pensioner-detail-service:latest > imagedefinitions.json
+      - printf '[{"name":"pensioner-detail-service-sk","imageUri":"%s"}]' 274201610284.dkr.ecr.us-west-2.amazonaws.com/pensioner-detail-service-sk:latest > imagedefinitions.json
 
 artifacts:
   files: imagedefinitions.json
