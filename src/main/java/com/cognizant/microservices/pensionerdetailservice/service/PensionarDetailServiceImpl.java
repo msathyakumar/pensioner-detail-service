@@ -57,7 +57,7 @@ public class PensionarDetailServiceImpl {
 				pensionerDetail.setAllowance(Double.parseDouble(data[5]));
 				pensionerDetail.setPensionType(data[6]);
 				pensionerDetail.setBank(new Bank(data[7], data[8], data[9]));
-				
+				//add data to pension
 				
 				pensionerDetailList.add(pensionerDetail);
 
